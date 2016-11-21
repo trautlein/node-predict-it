@@ -1,0 +1,1 @@
+For more information about the PredictIt API please head to their site to understand more. [Link](https://predictit.freshdesk.com/support/solutions/articles/12000001878-does-predictit-make-market-data-available-via-an-api-)
