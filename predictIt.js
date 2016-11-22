@@ -1,10 +1,11 @@
 const rp = require('request-promise');
 
-const options = {
-  uri: 'https://www.predictit.org/api/marketdata/ticker/USPREZ16',
+const base = 'https://www.predictit.org/api/marketdata/';
+const optionsAll = {
+  uri: base + 'all/',
   json: true,
 }
 
-rp(options)
+rp(optionsAll)
   .then(body => console.log(body))
   .catch(err => console.log("Error:", err));
