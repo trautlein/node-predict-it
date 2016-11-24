@@ -6,6 +6,14 @@
 
 TODO - have a code example here and some of the output for a specific market
 
+## Installation
+
+TODO
+
+```
+npm install node-predict-it
+```
+
 ## Endpoints
 
 There are four endpoints that you can make calls to.
@@ -97,6 +105,6 @@ Across these different endpoints data is updated only every sixty seconds.
 * **Group**: Each category also contains a number of markets, and is itself contained by a category. An example would be the *Electoral College*
 
 
-For more information about the PredictIt API please head to [their site](https://predictit.freshdesk.com/support/solutions/articles/12000001878-does-predictit-make-market-data-available-via-an-api-) to understand more - but take in mind that their documentation is sparse.
+For more information about the PredictIt API please head to [their site](https://predictit.freshdesk.com/support/solutions/articles/12000001878-does-predictit-make-market-data-available-via-an-api-) to understand more - but take in mind that their documentation is sparse. I am not affiliated with [PredictIt.org](https://predictit.org).
 
 [1]: Their API was released on October 18th, 2016.
