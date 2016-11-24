@@ -8,7 +8,7 @@ TODO - have a code example here and some of the output for a specific market
 
 ## Installation
 
-TODO
+TODO    
 
 ```
 npm install node-predict-it
@@ -23,7 +23,7 @@ There are four endpoints that you can make calls to.
 The endpoint that would display every market and its corresponding contracts is 
 
 ```
-https://www.predictit.org/api/marketdata/all/
+https://www.predictit.org/api/marketdata/all
 ```
 
 You can hit this using the TODO command. Here is an example below.
