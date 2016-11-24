@@ -38,7 +38,7 @@ const ind = {
 exports.market = function(ticker, callback) {
   const url = base + 'ticker/' + ticker;
 
-  request(url, function(err, response, body) {
+  request(url, (err, response, body) => {
     if (err) {
       console.log("Error returning single market:", err);
       callback(err, null);
@@ -52,7 +52,7 @@ exports.market = function(ticker, callback) {
 exports.group = function(group, callback) {
   const url = base + 'group/' + group.toString();
 
-  request(url, function(err, response, body) {
+  request(url, (err, response, body) => {
     if (err) {
       console.log(`Error requesting ${group.toString()} group:`, err);
       callback(err, null);
@@ -66,7 +66,7 @@ exports.group = function(group, callback) {
 exports.category = function(category, callback) {
   const url = base + 'category/' + category.toString();
 
-  request(url, function(err, response, body) {
+  request(url, (err, response, body) => {
     if (err) {
       console.log(`Error returning ${category.toString()} category:`, err);
       callback(err, null);
@@ -80,7 +80,7 @@ exports.category = function(category, callback) {
 exports.all = function(callback) {
   const url = base + 'all/';
 
-  request(url, function(err, response, body) {
+  request(url, (err, response, body) => {
     if (err) {
       console.log('Error returning all markets:', err);
       callback(err, null);
@@ -91,4 +91,7 @@ exports.all = function(callback) {
   });
 }
 
-exports.all(function( err, body ) { console.log(body); });
+// exports.all((err, body) => {
+//   body.Markets.forEach(item => console.log(item.TickerSymbol, ':', item.Name));
+// });
+
