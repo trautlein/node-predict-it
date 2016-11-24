@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "predictIt.js",
+  "respository": {
+    "type": "git",
+    "url": "http://github.com/trautlein/node-predict-it.git"
+  },
   "scripts": {
     "test": "jest"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "request": "^2.79.0",
     "request-promise": "^4.1.1"
   },
   "devDependencies": {
