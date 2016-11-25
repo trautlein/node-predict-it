@@ -35,6 +35,30 @@ const ind = {
   },
 };
 
+
+exports.dry = function(url, callback) {
+
+  request(url, (err, response, body) => {
+    if (err) {
+      console.log("Error returning ${url} :", err);
+      callback(err, null);
+    } else {
+      console.log("It worked!");
+      callback(null, JSON.parse(body));
+    }
+  });
+};
+
+exports.market2 = function(ticker, callback) {
+  const url = base + 'ticker/' + ticker;
+
+  exports.dry(url, callback);
+};
+
+exports.market2('CHINA.MANIPULATOR.063017', (err, data) => {
+  console.log(data);
+});
+
 exports.market = function(ticker, callback) {
   const url = base + 'ticker/' + ticker;
 
