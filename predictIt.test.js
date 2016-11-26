@@ -1,7 +1,13 @@
 const predictIt = require('./predictIt.js');
+const assert    = require('chai').assert;
+const chakram   = require('chakram');
 
-var chakram = require('chakram');
-var expect = chakram.expect;
+
+describe('Basics of PredictIt Module', () => {
+  it('should recognize correct version as 0.0.1', () => {
+    assert.equal(predictIt.version, '0.0.1');
+  });
+});
 
 describe('PredictIt is up and responding to tests', () => {
   it('should respond at the /all endpoint', () => {
@@ -24,6 +30,10 @@ describe('PredictIt is up and responding to tests', () => {
   it(`should respond at the /ticker endpoint for the ${ticker} market`, () => {
     return chakram.get(`https://www.predictit.org/api/marketdata/ticker/${ticker}`);
   });
+
+});
+
+describe('Our API wrapper correctly pulls from each endpoint', () => {
 
 });
 
