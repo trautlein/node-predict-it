@@ -4,8 +4,8 @@ const chakram   = require('chakram');
 
 
 describe('Basics of PredictIt Module', () => {
-  it('should recognize correct version as 0.0.1', () => {
-    assert.equal(predictIt.version, '0.0.1');
+  it('should recognize correct version as 0.0.2', () => {
+    assert.equal(predictIt.version, '0.0.2');
   });
 });
 
@@ -35,5 +35,9 @@ describe('PredictIt is up and responding to tests', () => {
 
 describe('Our API wrapper correctly pulls from each endpoint', () => {
 
+  const ticker = 'CHINA.MANIPULATOR.063017';
+  it(`should return json data for the ${ticker} market`, => {
+
+  });
 });
 

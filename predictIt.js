@@ -1,9 +1,6 @@
-const request = require('request');
-const rp      = require('request-promise');
-const Promise = require('bluebird');
+const rp = require('request-promise');
 
-exports.version = '0.0.1';
-
+exports.version = '0.0.2';
 
 const base = 'https://www.predictit.org/api/marketdata/';
 
