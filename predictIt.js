@@ -10,9 +10,9 @@ const apiCall = function(uri) {
 };
 
 
-exports.contractCall = function(targetContract) {
+exports.contract = function(targetContract) {
   return new Promise(resolve => {
-    exports.marketCall(targetContract)
+    exports.market(targetContract)
       .then(market => {
         market.Contracts.forEach((contract, index) => {
           if (contract.TickerSymbol === targetContract) {
@@ -23,24 +23,24 @@ exports.contractCall = function(targetContract) {
   });
 };
 
-exports.marketCall = function(market) {
+exports.market = function(market) {
   const url = base + 'ticker/' + market;
   return apiCall(url);
 };
 
-exports.groupCall = function(group) {
+exports.group = function(group) {
   const url = base + 'group/' + group.toString();
   return apiCall(url)
     .then(d => d.Markets);
 };
 
-exports.categoryCall = function(category) {
+exports.category = function(category) {
   const url = base + 'category/' + category.toString();
   return apiCall(url)
     .then(d => d.Markets);
 };
 
-exports.allCall = function() {
+exports.all = function() {
   const url = base + 'all';
   return apiCall(url)
     .then(data => data.Markets);
