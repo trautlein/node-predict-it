@@ -8,17 +8,25 @@ TODO - have a code example here and some of the output for a specific market
 
 ## Installation
 
-TODO    
+TODO   
+ 
+In your shell run the following command to install the Node wrapper in your current directory:
 
 ```
-npm install node-predict-it
+npm install node-predict-it 
 ```
 
-## Endpoints
+Then, in the JavaScript file that you are going to be making the API calls, load the module at the top of your script with the following:
 
-There are four endpoints that you can make calls to.
+```javascript
+const predictIt = require('predictIt');
+```
 
-### All Markets
+## Endpoints and Associated Methods
+
+There are four endpoints that you can make calls to. Each call to the API with this wrapper will return a Promise.
+
+### All Markets: `.all`
 
 The endpoint that would display every market and its corresponding contracts is 
 
@@ -26,13 +34,15 @@ The endpoint that would display every market and its corresponding contracts is
 https://www.predictit.org/api/marketdata/all
 ```
 
-You can hit this using the TODO command. Here is an example below.
+You can hit this using the `.all` method. Here is an example below.
 
-```
-TODO: EXAMPLE HERE
+```javascript
+predictIt.all()
 ```
 
-### Categories
+Note: This API call can take a considerable amount of time and pulls in about half a megabyte of data.
+
+### Categories: `.category`
 
 The endpoint that would display every market below a specific category is: 
 
@@ -49,13 +59,13 @@ ID   | Category
 13   | US Politics
 
 
-You can hit this using the TODO command. Here is an example below.
+You can hit this using the `category` command. Here is an example below.
 
-```
-TODO: EXAMPLE HERE
+```javascript
+predictIt.category(6)
 ```
 
-### Groups
+### Groups: `.group`
 
 The endpoint that would display every market in a specific group is:
 
@@ -74,13 +84,13 @@ Where \<group-id\> is one of fourteen possible groups. They are listed below wit
 |    |                  |   | 82  | Congress             |   | 81 | Cabinet            |
 
 
-You can hit this using the TODO command. Here is an example below.
+You can hit this using the `.group` command. Here is an example below.
 
-```
-TODO: EXAMPLE HERE
+```javascript
+predictIt.category(82)
 ```
 
-### Markets
+### Markets: `.market`
 
 The endpoint that would display a single market and its corresponding contracts is: 
 ```
@@ -89,13 +99,26 @@ https://www.predictit.org/api/marketdata/ticker/<ticker-symbol>
 
 Replace \<ticker-symbol\> with a ticker symbol from the PredictIt website or from another API call above. It would look something like **SYKES.SCOTUS.NEXTJUSTICE**.
 
-You can hit this using the TODO command. Here is an example below.
+You can hit this using the `.market` command. Here is an example below.
 
-```
-TODO: EXAMPLE HERE
+```javascript
+predictIt.market('USPREZ16')
 ```
 
 Across these different endpoints data is updated only every sixty seconds.
+
+## Additional Methods
+
+### `.contract`
+
+TODO 
+
+If you make a market call with a contract string you will end up getting back extra data that you might not need. A contract string, like 'TRUMP.USPREZ16', used with the `.market` method will return all contracts from the 'USPREZ16' market, which will give you data on contracts you might not be interested about including 'CLINTON.USPREZ16' and 'STEIN.USPREZ16'. The `.contract` method will give you solely back that contract's data.
+
+```javascript
+predictIt.market('TRUMP.USPREZ16')
+```
+
 
 ## Glossary
 
