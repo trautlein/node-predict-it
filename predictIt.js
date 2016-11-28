@@ -1,12 +1,24 @@
 const rp      = require('request-promise');
 const Promise = require('bluebird');
 
-exports.version = '0.0.2';
+exports.version = '0.0.3';
 
 const base = 'https://www.predictit.org/api/marketdata/';
 
 const apiCall = function(uri) {
-  return rp({uri, json: true});
+  return rp({uri, json: true})
+    .then(d => {
+      if (d === null) { throw new Error('BADARG'); }
+      return d;
+    })
+    .catch(err => {
+      if (err.message === 'BADARG') {
+        console.log('ERROR: BADARG: You likely entered in bad arguments.');
+      } else if (err.error.errno === 'ENOTFOUND') {
+        console.log('ERROR: ENOTFOUND: Couldn\'t access the url you were trying to query.');
+        console.log('Your internet connection could be bad.');
+      }
+    });
 };
 
 

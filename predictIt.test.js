@@ -4,8 +4,8 @@ const chakram   = require('chakram');
 
 
 describe('Basics of PredictIt Module', () => {
-  it('should recognize correct version as 0.0.2', () => {
-    assert.equal(predictIt.version, '0.0.2');
+  it('should recognize correct version as 0.0.3', () => {
+    assert.equal(predictIt.version, '0.0.3');
   });
 });
 
