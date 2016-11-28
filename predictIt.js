@@ -1,7 +1,7 @@
 const rp      = require('request-promise');
 const Promise = require('bluebird');
 
-exports.version = '0.0.3';
+exports.version = '0.0.4';
 
 const base = 'https://www.predictit.org/api/marketdata/';
 
@@ -18,6 +18,7 @@ const apiCall = function(uri) {
         console.log('ERROR: ENOTFOUND: Couldn\'t access the url you were trying to query.');
         console.log('Your internet connection could be bad.');
       }
+      return err;
     });
 };
 
