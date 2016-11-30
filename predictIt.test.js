@@ -4,13 +4,6 @@ const chakram   = require('chakram');
 
 const expect = chakram.expect;
 
-
-describe('Basics of PredictIt Module', () => {
-  it('should recognize correct version as 0.0.4', () => {
-    assert.equal(predictIt.version, '0.0.4');
-  });
-});
-
 describe('PredictIt is up and responding to tests', () => {
   it('should respond at the /all endpoint', () => {
     return chakram.get('https://www.predictit.org/api/marketdata/all');
