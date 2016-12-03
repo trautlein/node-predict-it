@@ -9,8 +9,6 @@
 TODO - have a code example here and some of the output for a specific market
 
 ## Installation
-
-TODO   
  
 In your shell run the following command to install the Node wrapper in your current directory:
 
@@ -115,10 +113,10 @@ Across these different endpoints data is updated only every sixty seconds.
 
 TODO 
 
-If you make a market call with a contract string you will end up getting back extra data that you might not need. A contract string, like 'TRUMP.USPREZ16', used with the `.market` method will return all contracts from the 'USPREZ16' market, which will give you data on contracts you might not be interested about including 'CLINTON.USPREZ16' and 'STEIN.USPREZ16'. The `.contract` method will give you solely back that contract's data.
+If you make a market call with a contract string you will end up getting back extra data that you might not need. A contract string, like 'TRUMP.USPREZ16', used with the `.market` method will return all contracts from the 'USPREZ16' market. If you called 'USPREZ16' on it's own you might receive data on contracts you might not be interested about including 'CLINTON.USPREZ16' and 'STEIN.USPREZ16'. The `.contract` method will give you solely back that contract's data.
 
 ```javascript
-predictIt.market('TRUMP.USPREZ16')
+predictIt.contract('TRUMP.USPREZ16')
 ```
 
 
