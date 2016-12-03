@@ -111,8 +111,6 @@ Across these different endpoints data is updated only every sixty seconds.
 
 ### `.contract`
 
-TODO 
-
 If you make a market call with a contract string you will end up getting back extra data that you might not need. A contract string, like 'TRUMP.USPREZ16', used with the `.market` method will return all contracts from the 'USPREZ16' market. If you called 'USPREZ16' on it's own you might receive data on contracts you might not be interested about including 'CLINTON.USPREZ16' and 'STEIN.USPREZ16'. The `.contract` method will give you solely back that contract's data.
 
 ```javascript
