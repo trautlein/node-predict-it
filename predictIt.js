@@ -1,8 +1,6 @@
 const rp      = require('request-promise');
 const Promise = require('bluebird');
 
-// exports.version = 'TODO LATER';
-
 const base = 'https://www.predictit.org/api/marketdata/';
 
 const apiCall = function(uri) {
