@@ -1,12 +1,52 @@
 # PredictIt API Node.js Wrapper
 
-**NOTE**: This is currently an in progress package, very much in an alpha stage. Use at your own caution. 
 
 [PredictIt](https://predictIt.org) is a prediction marketplace where traders can bet on the outcome of political events. This repo contains a Node.js wrapper for their newly<sup>1</sup>  introduced API. You can get up to date information about all of their markets through this API. For basic information about how PredictIt works, please visit their [help page](https://predictit.freshdesk.com/support/solutions/articles/5000516268-trading-basics-). This API does not require any authorization.
 
 ## Quickstart
 
-TODO - have a code example here and some of the output for a specific market
+Try running this wrapper on an important market, like the predictions currently for our next Supreme Court Justice. You could do this by loading the module and then typing:
+
+```javascript
+predictIt.market('SCOTUS.NEXTJUSTICE')
+  .then(data => console.log(data));
+```
+
+This would `console.log` the current market information about the next Supreme Court justice pick. You could refine your query with promises to work with the data in a number of ways. For example you could output the question the market is asking and the price of each contract in the market, along with that contracts name. That code is below:
+
+```javascript
+predictIt.market('SCOTUS.NEXTJUSTICE')
+  .then(data => {
+    console.log(`${data.Name}\nCurrent buy prices are at:\n\n`);
+
+    data.Contracts.forEach(contract => {
+      console.log(`$${contract.BestBuyYesCost.toFixed(2)} for ${contract.Name}`);
+    });
+  });
+```
+
+This would end up returning<sup>2</sup>:
+
+```
+Who will be the next confirmed Supreme Court justice?
+Current best buy prices are at:
+
+$0.25 for William H. Pryor, Jr.
+$0.19 for Diane Sykes
+$0.11 for Thomas Lee
+$0.10 for Joan Larsen
+$0.10 for Raymond Kethledge
+$0.08 for Ted Cruz
+$0.04 for Allison Eid
+$0.04 for Don Willett
+$0.02 for Merrick Garland
+$0.02 for Thomas Hardiman
+$0.03 for Raymond Gruender
+$0.02 for Steven Colloton
+$0.01 for Sri Srinivasan
+$0.03 for David Stras
+$0.01 for Barack Obama
+```
 
 ## Installation
  
@@ -129,3 +169,5 @@ predictIt.contract('TRUMP.USPREZ16')
 For more information about the PredictIt API please head to [their site](https://predictit.freshdesk.com/support/solutions/articles/12000001878-does-predictit-make-market-data-available-via-an-api-) to understand more - but take in mind that their documentation is sparse. I am not affiliated with [PredictIt.org](https://predictit.org).
 
 [1]: Their API was released on October 18th, 2016.
+
+[2]: This data was returned on December 3rd, 2016. This market may no longer exist when you seek to use the package, so please use the `.all` method or the PredictIt.org website to seek out a market to test on.
