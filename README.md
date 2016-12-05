@@ -1,7 +1,7 @@
 # PredictIt API Node.js Wrapper
 
 
-[PredictIt](https://predictIt.org) is a prediction marketplace where traders can bet on the outcome of political events. This repo contains a Node.js wrapper for their newly<sup>1</sup>  introduced API. You can get up to date information about all of their markets through this API. For basic information about how PredictIt works, please visit their [help page](https://predictit.freshdesk.com/support/solutions/articles/5000516268-trading-basics-). This API does not require any authorization.
+[PredictIt](https://predictIt.org) is a prediction marketplace where traders can bet on the outcome of political events. This repo contains a Node.js wrapper for their newly introduced API. You can get up to date information about all of their markets through this API. For basic information about how PredictIt works, please visit their [help page](https://predictit.freshdesk.com/support/solutions/articles/5000516268-trading-basics-). This API does not require any authorization.
 
 ## Quickstart
 
@@ -177,6 +177,4 @@ npm test
 ```
 
 This will run the tests using [Jest](https://facebook.github.io/jest/).
-
-[1]: Their API was released on October 18th, 2016.
 
