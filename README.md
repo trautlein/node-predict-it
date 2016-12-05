@@ -25,7 +25,7 @@ predictIt.market('SCOTUS.NEXTJUSTICE')
   });
 ```
 
-This would end up returning<sup>2</sup>:
+As of December 3rd, 2016, this would end up returning:
 
 ```
 Who will be the next confirmed Supreme Court justice?
@@ -52,7 +52,7 @@ $0.01 for Barack Obama
  
 In your shell run the following command to install the Node wrapper in your current directory:
 
-```
+```bash
 npm install node-predict-it 
 ```
 
@@ -165,9 +165,18 @@ predictIt.contract('TRUMP.USPREZ16')
 * **Category**: The largest bin under which PredictIt sorts their markets. E.g., *US Politics*. Each category also has subcategories, or groups.
 * **Group**: Each category also contains a number of markets, and is itself contained by a category. An example would be the *Electoral College*
 
-
 For more information about the PredictIt API please head to [their site](https://predictit.freshdesk.com/support/solutions/articles/12000001878-does-predictit-make-market-data-available-via-an-api-) to understand more - but take in mind that their documentation is sparse. I am not affiliated with [PredictIt.org](https://predictit.org).
+
+
+## Testing
+
+To run the included tests make sure you have installed the developer dependencies and then run:
+
+```bash
+npm test
+```
+
+This will run the tests using [Jest](https://facebook.github.io/jest/).
 
 [1]: Their API was released on October 18th, 2016.
 
-[2]: This data was returned on December 3rd, 2016. This market may no longer exist when you seek to use the package, so please use the `.all` method or the PredictIt.org website to seek out a market to test on.
