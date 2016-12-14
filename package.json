@@ -1,6 +1,6 @@
 {
   "name": "predict-it",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A thin Node API wrapper for the Predict.org API",
   "main": "predictIt.js",
   "respository": {
