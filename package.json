@@ -5,15 +5,16 @@
   "main": "predictIt.js",
   "respository": {
     "type": "git",
-    "url": "http://github.com/trautlein/node-predict-it.git"
+    "url": "git://github.com/trautlein/node-predict-it.git"
   },
   "scripts": {
     "test": "jest"
   },
-  "author": "",
+  "author": "Hans Trautlein - hans@trautlein.com",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.6",
+    "request": "^2.79.0",
     "request-promise": "^4.1.1"
   },
   "devDependencies": {
