@@ -8,6 +8,7 @@
     "url": "git://github.com/trautlein/node-predict-it.git"
   },
   "scripts": {
+    "cov": "jest --coverage",
     "test": "jest"
   },
   "author": "Hans Trautlein - hans@trautlein.com",

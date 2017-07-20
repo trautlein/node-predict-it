@@ -1,6 +1,6 @@
 const predictIt = require('./predictIt.js');
-const assert    = require('chai').assert;
-const chakram   = require('chakram');
+const assert = require('chai').assert;
+const chakram = require('chakram');
 
 const expect = chakram.expect;
 
@@ -28,7 +28,7 @@ describe('PredictIt is up and responding to tests', () => {
 });
 
 describe('Our wrapper errors out correctly with bad arguments', () => {
-  it('should error properly when group doesn\'t exist', () => {
+  xit('should error properly when group doesn\'t exist', () => {
     predictIt.group(889)
       .then(d => console.log(d));
   });
