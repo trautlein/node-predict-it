@@ -35,7 +35,7 @@ exports.contract = function(targetContract) {
 };
 
 exports.market = function(market) {
-  const url = base + 'ticker/' + market;
+  const url = base + 'markets/' + market;
   return apiCall(url);
 };
 
